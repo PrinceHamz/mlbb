@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Legends Heroes</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: #f8b62b;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav {
+            background-color: #1a1a1a;
+            color: #fff;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 16px;
+            float: left;
+        }
+        .nav a:hover {
+            background-color: #f8b62b;
+            color: #000;
+        }
+        .nav #searchInput {
+            background-color: #333;
+            color: #f8b62b;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px; /* increased padding */
+            font-size: 1.2em; /* increased font size */
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+            float: right; /* float to the right */
+        }
+
+        .nav #searchInput:focus {
+            background-color: #f8b62b;
+            color: #000;
+            outline: none;
+        }
+
+        .nav #searchInput::placeholder {
+            color: #f8b62b;
+        }
+        .heroes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+        .hero-card {
+            background-color: #333;
+            color: #f8b62b;
+            margin: 10px;
+            padding: 20px;
+            width: 100px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .hero-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            align-self: flex-end;
+        }
+        .hero-card img {
+            width: 100%;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: #f8b62b;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Mobile Legends Heroes</h1>
+        <h2 id="greeting"></h2>
+        <h3 id="clock"></h3>
+    </div>
+    <div class="nav" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="hero.html">Heroes</a>
+        <a href="bf.html">Battlefield</a>
+        <a href="mode.html">Game Modes</a>
+        <input type="text" id="searchInput" placeholder="Search for heroes...">
+    </div>
+    <div class="heroes">
+        <div class="hero-card">
+            <img src="hero/xavier.png" alt="xavier">
+            <h2>Xavier</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/alu.png" alt="Alucard">
+            <h2>Alucards</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/ling.png" alt="Alucard">
+            <h2>Ling</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/granger.png" alt="Alucard">
+            <h2>Granger</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/tigreal.png" alt="Alucard">
+            <h2>Tigreal</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/dyrroth.png" alt="Alucard">
+            <h2>Dyrroth</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/julian.png" alt="Alucard">
+            <h2>Julian</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/aamon.png" alt="Alucard">
+            <h2>Aamon</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/minsitthar.png" alt="Alucard">
+            <h2>Minsitthar</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/yin.png" alt="Alucard">
+            <h2>Yin</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/Arlott.png" alt="Alucard">
+            <h2>Arlott</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/fredrinn.png" alt="Alucard">
+            <h2>Fredrinn</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/franco.png" alt="Alucard">
+            <h2>Franco</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/lancelot.png" alt="Alucard">
+            <h2>Lancelot</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/akai.png" alt="Alucard">
+            <h2>Akai</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/gusion.png" alt="Alucard">
+            <h2>Gusion</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/hayabusa.png" alt="Alucard">
+            <h2>Hayabusa</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/chou.png" alt="Alucard">
+            <h2>Chou</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/martis.png" alt="Alucard">
+            <h2>Martis</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/clint.png" alt="Alucard">
+            <h2>Clint</h2>
+        </div>
+        <div class="hero-card">
+            <img src="hero/yu-zhong.png" alt="Alucard">
+            <h2>Yu Zhong</h2>
+        </div>
+        <!-- Repeat for other heroes -->
+    </div>
+    <div class="footer">
+        Copyright © 2023 Mobile Legends. All rights reserved.
+    </div>
+    <script>
+    const greeting = document.getElementById('greeting');
+    const clock = document.getElementById('clock');
+
+    function updateClockAndGreeting() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+
+        clock.textContent = `${hours}:${minutes}:${seconds}`;
+
+        if (hours < 12) {
+             greeting.textContent = 'Good Morning, Welcome to the Battlefield!';
+         } else if (hours < 18) {
+             greeting.textContent = 'Good Afternoon, Welcome to the Battlefield!';
+         } else {
+             greeting.textContent = 'Good Evening, Welcome to the Battlefield!';
+         }
+     }
+
+     setInterval(updateClockAndGreeting, 1000);
+     const navbar = document.getElementById('navbar');
+
+    function animateNavbar() {
+        if (window.scrollY > 50) {
+            navbar.style.padding = '10px 0';
+            navbar.style.backgroundColor = '#f8b62b';
+        } else {
+            navbar.style.padding = '20px 0';
+            navbar.style.backgroundColor = '#1a1a1a';
+        }
+    }
+
+    window.addEventListener('scroll', animateNavbar);
+    const searchInput = document.getElementById('searchInput');
+    const heroCards = Array.from(document.getElementsByClassName('hero-card'));
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+
+        heroCards.forEach(function(heroCard) {
+            const heroName = heroCard.getElementsByTagName('h2')[0].innerText.toLowerCase();
+            if (heroName.includes(query)) {
+                heroCard.style.display = '';
+            } else {
+                heroCard.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>

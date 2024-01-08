@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Legends Game Modes</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: #f8b62b;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav {
+            background-color: #1a1a1a;
+            color: #fff;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 16px;
+            float: left;
+        }
+        .nav a:hover {
+            background-color: #f8b62b;
+            color: #000;
+        }
+        .mode-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .mode-card {
+            background-color: #333;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            width: calc(25% - 40px);
+            box-sizing: border-box;
+        }
+        .mode-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .mode-card img:hover {
+            transform: scale(1.05);
+        }
+        .mode-card h2 {
+            color: #f8b62b;
+            text-align: center;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: #f8b62b;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Mobile Legends</h1>
+        <h2 id="greeting"></h2>
+        <h3 id="clock"></h3>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="hero.html">Heroes</a>
+        <a href="bf.html">Battlefield</a>
+        <a href="mode.html">Game Modes</a>
+    </div>
+    <div class="mode-container">
+        <div class="mode-card">
+            <h2>RANKED</h2>
+            <img src="image/rank.jpg" alt="Mode 2 Image">
+        </div>
+        <div class="mode-card">
+            <h2>CLASSIC</h2>
+            <img src="image/klasik.jpg" alt="Mode 2 Image">
+        </div>
+        <div class="mode-card">
+            <h2>Magic Chess</h2>
+            <img src="image/MC.jpg" alt="Mode 2 Image">
+        </div>
+        <div class="mode-card">
+            <h2>Brawl</h2>
+            <img src="image/brawl.jpg" alt="Mode 2 Image">
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2023 Mobile Legends. All rights reserved.
+    </div>
+    <script>
+        const text = document.getElementById('scrolling-text');
+        let charIndex = 0;
+
+        function animateText() {
+            if (charIndex < text.textContent.length) {
+                text.textContent = text.textContent.slice(1) + text.textContent.charAt(0);
+                charIndex++;
+            } else {
+                charIndex = 0;
+            }
+        }
+
+        setInterval(animateText, 200);
+
+        const greeting = document.getElementById('greeting');
+        const clock = document.getElementById('clock');
+
+        function updateClockAndGreeting() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            clock.textContent = `${hours}:${minutes}:${seconds}`;
+
+            if (hours < 12) {
+                 greeting.textContent = 'Good Morning, Welcome to the Battlefield!';
+             } else if (hours < 18) {
+                 greeting.textContent = 'Good Afternoon, Welcome to the Battlefield!';
+             } else {
+                 greeting.textContent = 'Good Evening, Welcome to the Battlefield!';
+             }
+         }
+
+         setInterval(updateClockAndGreeting, 1000);
+         const navbar = document.getElementById('navbar');
+
+    function animateNavbar() {
+        if (window.scrollY > 50) {
+            navbar.style.padding = '10px 0';
+            navbar.style.backgroundColor = '#f8b62b';
+        } else {
+            navbar.style.padding = '20px 0';
+            navbar.style.backgroundColor = '#1a1a1a';
+        }
+    }
+
+    window.addEventListener('scroll', animateNavbar);
+    </script>
+</body>
+</html>
